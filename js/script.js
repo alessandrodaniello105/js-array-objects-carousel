@@ -72,35 +72,12 @@ const images = document.getElementsByClassName('item');
 const imagesThumbActive = document.getElementsByClassName('item-thumb');
 
 
-btnNext.addEventListener('click', function(){
-  
-  if (counterImg < (arrayImgs.length - 1)) {
+btnNext.addEventListener('click', clickNext);
 
-    images[counterImg].classList.remove('active'); 
-    imagesThumbActive[counterImg].classList.remove('active');
-  
-    counterImg++;
-    
-    images[counterImg].classList.add('active');
-    imagesThumbActive[counterImg].classList.add('active');
+btnPrev.addEventListener('click', clickPrev);
 
 
-  } else if (counterImg == (arrayImgs.length - 1)) {
-
-    images[counterImg].classList.remove('active'); 
-    imagesThumbActive[counterImg].classList.remove('active');
-
-    counterImg = 0;
-
-    images[counterImg].classList.add('active');
-    imagesThumbActive[counterImg].classList.add('active');
-
-  }
-
-});
-
-
-btnPrev.addEventListener('click', function(){
+function clickPrev() {
 
   if (counterImg > 0) {
 
@@ -126,4 +103,32 @@ btnPrev.addEventListener('click', function(){
     imagesThumbActive[counterImg].classList.add('active');
     
   }
-});
+
+};
+
+function clickNext() {
+
+  if (counterImg < (arrayImgs.length - 1)) {
+
+    images[counterImg].classList.remove('active'); 
+    imagesThumbActive[counterImg].classList.remove('active');
+  
+    counterImg++;
+    
+    images[counterImg].classList.add('active');
+    imagesThumbActive[counterImg].classList.add('active');
+
+
+  } else if (counterImg == (arrayImgs.length - 1)) {
+
+    images[counterImg].classList.remove('active'); 
+    imagesThumbActive[counterImg].classList.remove('active');
+
+    counterImg = 0;
+
+    images[counterImg].classList.add('active');
+    imagesThumbActive[counterImg].classList.add('active');
+
+  }
+
+};
