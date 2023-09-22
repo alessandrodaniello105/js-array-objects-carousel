@@ -34,6 +34,11 @@ const arrayImgs = [
 ];
 
 const itemsCollector = document.querySelector('.items-wrapper');
+
+const imgBox = document.createElement('div')
+imgBox.className = 'img-box';
+itemsCollector.append(imgBox);
+
 const thumbnail = document.querySelector('.thumbnail');
 
 const btnPrev = document.querySelector('.up');
@@ -57,15 +62,23 @@ let counterImg = 0;
 
 arrayImgs.forEach((immagine)=>{
 
-  itemsCollector.innerHTML += `<img src="${immagine.image}" class="item">`;
+  imgBox.innerHTML += `
+
+    <img src="${immagine.image}" class="item">
+
+  
+  `;
 
   thumbnail.innerHTML += `<img src="${immagine.image}" class="item-thumb">`;
 
+  //Rendo la prima immagine attiva 
   if (arrayImgs[0]) document.querySelector('.item').classList.add('active');
 
   if (arrayImgs[0]) document.querySelector('.item-thumb').classList.add('active');
   
 });
+
+const carouselNext = setInterval(clickNext, 2500);
 
 
 const images = document.getElementsByClassName('item');
