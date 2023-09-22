@@ -40,7 +40,7 @@ const itemsCollector = document.querySelector('.items-wrapper');
 // imgBox.className = 'img-box';
 // itemsCollector.append(imgBox);
 
-const thumbnail = document.querySelector('.thumbnail');
+const thumbnails = document.querySelector('.thumbnails');
 
 const btnPrev = document.querySelector('.up');
 const btnNext = document.querySelector('.down');
@@ -51,8 +51,8 @@ const btnInvertCarousel = document.querySelector('.invert');
 let counterImg = 0;
 
 
-const arrayThumb = arrayImgs.filter(immagine => immagine);
-console.log(arrayThumb);
+// const arrayThumb = arrayImgs.filter(immagine => immagine);
+// console.log(arrayThumb);
 
 // 3. Sostituisco i miei elementi dello slider con gli oggetti importati
 arrayImgs.forEach((immagine) => {
@@ -73,7 +73,13 @@ arrayImgs.forEach((immagine) => {
 
   `;
 
-  thumbnail.innerHTML += `<img src="${immagine.image}" class="item-thumb">`;
+  thumbnails.innerHTML += `
+
+  <div class="thumbnail">
+    <img src="${immagine.image}" class="item-thumb">
+  </div>
+  
+  `;
 
   //Rendo la prima immagine attiva 
   if (arrayImgs[0]) document.querySelector('.img-box').classList.add('active');
@@ -85,6 +91,39 @@ arrayImgs.forEach((immagine) => {
 
 const images = document.getElementsByClassName('item');
 const imagesThumbActive = document.getElementsByClassName('item-thumb');
+
+
+// console.log(imagesThumbActive)
+
+for (let i = 0; i < imagesThumbActive.length; i++) {
+
+  let imgThumb = imagesThumbActive[i];
+
+  imgThumb.addEventListener('click', function(){
+
+    console.log(this);
+
+    images[counterImg].classList.remove('active'); 
+    imagesThumbActive[counterImg].classList.remove('active');
+  
+    counterImg = i;
+    
+    images[counterImg].classList.add('active');
+    imagesThumbActive[counterImg].classList.add('active');
+
+  });
+
+};
+
+
+
+// imagesThumbActive.forEach((element, index) => {
+//   console.log(element, index);
+// });
+
+function myFunction(){
+  console.log(imagesThumbActive[0])
+};
 
 
 btnNext.addEventListener('click', clickNext);
@@ -118,17 +157,6 @@ btnInvertCarousel.addEventListener('click', function(){
   }
 
 });
-
-
-
-function funzioneA() {
-  if (carouselSlideshow == setInterval(clickNext, 2500)) {
-    return clickPrev
-  }
-
-  return clickNext
-  
-};
 
 
 function clickPrev() {
