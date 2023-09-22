@@ -51,7 +51,8 @@ const btnInvertCarousel = document.querySelector('.invert');
 let counterImg = 0;
 
 
-
+const arrayThumb = arrayImgs.filter(immagine => immagine);
+console.log(arrayThumb);
 
 // 3. Sostituisco i miei elementi dello slider con gli oggetti importati
 arrayImgs.forEach((immagine) => {
@@ -80,18 +81,6 @@ arrayImgs.forEach((immagine) => {
   if (arrayImgs[0]) document.querySelector('.item-thumb').classList.add('active');
   
 });
-
-// for (let i = 0; i < arrayImgs.length; i++) {
-
-//   let image = arrayImgs[i];
-
-//   itemsCollector.innerHTML += `<img src="${image}" class="item">`;
-//   thumbnail.innerHTML += `<img src="${image}" class="item-thumb">`;
-  
-//   if (i === 0) document.querySelector('.item').classList.add('active');
-//   if (i === 0) document.querySelector('.item-thumb').classList.add('active');
-
-// };
 
 
 const images = document.getElementsByClassName('item');
@@ -131,16 +120,6 @@ btnInvertCarousel.addEventListener('click', function(){
 });
 
 
-
-// if (funzioneA == clickNext) {
-//   goPrev = false;
-// } else  {
-//   goPrev = true;
-// };
-
-
-
-// console.log (carouselSlideshow);
 
 function funzioneA() {
   if (carouselSlideshow == setInterval(clickNext, 2500)) {
@@ -210,3 +189,9 @@ function clickNext() {
   }
 
 };
+
+
+
+// function switchActiveThumb() {
+
+// };
