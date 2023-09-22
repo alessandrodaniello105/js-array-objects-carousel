@@ -7,6 +7,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* 
+body {
+  transition: all .5s;
+} */
+
 
 .main-wrapper {
   height: 100vh;
@@ -30,6 +35,11 @@
 
 .items-wrapper {
   width: 80%;
+  height: 100%;
+}
+
+.items-wrapper .img-box {
+  width: 100%;
   height: 100%;
 }
 
