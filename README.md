@@ -14,4 +14,4 @@ Carosello Array di Oggetti
 1. Dichiaro il bottone in una const in js
 1. Al click del bottone: se la direzione è normale (goPrev = false) allora vai all'indietro, e viceversa
 ## Bonus 3
-1. Aggiungo un eventListener alle thumbnail che mi renda attiva la thumb cliccata. (??)
+1. Aggiungo un eventListener alle thumbnail che mi renda attiva la thumb cliccata.

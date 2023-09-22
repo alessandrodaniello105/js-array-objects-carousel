@@ -93,8 +93,18 @@ const images = document.getElementsByClassName('item');
 const imagesThumbActive = document.getElementsByClassName('item-thumb');
 
 
+// array.forEach(function(currentValue, index, arr), thisValue)
+
 // console.log(imagesThumbActive)
 
+// for (let elementoThumb of imagesThumbActive) {
+//   console.log()
+// }
+
+// console.log(imagesThumbActive[0])
+
+
+// BONUS 3 // 1. Aggiungo un eventListener alle thumbnail che mi renda attiva la thumb cliccata.
 for (let i = 0; i < imagesThumbActive.length; i++) {
 
   let imgThumb = imagesThumbActive[i];
@@ -115,16 +125,9 @@ for (let i = 0; i < imagesThumbActive.length; i++) {
 
 };
 
-
-
-// imagesThumbActive.forEach((element, index) => {
-//   console.log(element, index);
-// });
-
-function myFunction(){
-  console.log(imagesThumbActive[0])
-};
-
+document.body.addEventListener('contextmenu', function(){
+  alert('Perché vuoi spiare il mio codice? Vabbè dai, per stavolta lascio correre');
+});
 
 btnNext.addEventListener('click', clickNext);
 
@@ -217,9 +220,3 @@ function clickNext() {
   }
 
 };
-
-
-
-// function switchActiveThumb() {
-
-// };
