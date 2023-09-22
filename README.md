@@ -10,6 +10,7 @@ Carosello Array di Oggetti
 
 ## Bonus 2
 1. Creo un bottone "inverti direzione" nel DOM
+1. Dichiaro la classe in css ".slider-arrow.invert", e stilo il mio pulsante
 1. Dichiaro il bottone in una const in js
 1. (da editare) Al click del bottone fermo il setInterval e ne aggiungo un altro per l'altro "senso di marcia"/cambio la funzione da eseguire al setInterval
 

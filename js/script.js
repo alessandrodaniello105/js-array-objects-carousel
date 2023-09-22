@@ -35,17 +35,49 @@ const arrayImgs = [
 
 const itemsCollector = document.querySelector('.items-wrapper');
 
-const imgBox = document.createElement('div')
-imgBox.className = 'img-box';
-itemsCollector.append(imgBox);
+// Creo un container delle immagini per farle stampare nello stesso punto
+// const imgBox = document.createElement('div')
+// imgBox.className = 'img-box';
+// itemsCollector.append(imgBox);
 
 const thumbnail = document.querySelector('.thumbnail');
 
 const btnPrev = document.querySelector('.up');
 const btnNext = document.querySelector('.down');
 
+// BONUS 2 // 3. Dichiaro il bottone in una const in js
+const btnInvertCarousel = document.querySelector('.invert');
+
 let counterImg = 0;
 
+
+
+
+// 3. Sostituisco i miei elementi dello slider con gli oggetti importati
+arrayImgs.forEach((immagine)=>{
+
+  itemsCollector.innerHTML += `
+ 
+  <div class="img-box item">
+    <img src="${immagine.image}">
+
+    <div class="text-box">
+      <h2 class="title">${immagine.title}</h2>
+
+      <p class="text">${immagine.text}</p>
+    </div>
+  </div>
+
+  `;
+
+  thumbnail.innerHTML += `<img src="${immagine.image}" class="item-thumb">`;
+
+  //Rendo la prima immagine attiva 
+  if (arrayImgs[0]) document.querySelector('.img-box').classList.add('active');
+
+  if (arrayImgs[0]) document.querySelector('.item-thumb').classList.add('active');
+  
+});
 
 // for (let i = 0; i < arrayImgs.length; i++) {
 
@@ -60,25 +92,9 @@ let counterImg = 0;
 // };
 
 
-arrayImgs.forEach((immagine)=>{
 
-  imgBox.innerHTML += `
-
-    <img src="${immagine.image}" class="item">
-
-  
-  `;
-
-  thumbnail.innerHTML += `<img src="${immagine.image}" class="item-thumb">`;
-
-  //Rendo la prima immagine attiva 
-  if (arrayImgs[0]) document.querySelector('.item').classList.add('active');
-
-  if (arrayImgs[0]) document.querySelector('.item-thumb').classList.add('active');
-  
-});
-
-const carouselNext = setInterval(clickNext, 2500);
+// BONUS 1 // 1.
+let carouselNext = setInterval(clickNext, 2500);
 
 
 const images = document.getElementsByClassName('item');
@@ -89,8 +105,21 @@ btnNext.addEventListener('click', clickNext);
 
 btnPrev.addEventListener('click', clickPrev);
 
+// btnInvertCarousel.addEventListener('click', function(){
+
+//   if (carouselNext === setInterval(clickNext, 2500)) {
+//     console.log(this)
+//   } else {
+//     console.log('altro', this)
+//   }
+
+// });
+
+
+
 
 function clickPrev() {
+  console.log('indietro');
 
   if (counterImg > 0) {
 
@@ -120,6 +149,8 @@ function clickPrev() {
 };
 
 function clickNext() {
+
+  console.log('avanti');
 
   if (counterImg < (arrayImgs.length - 1)) {
 
