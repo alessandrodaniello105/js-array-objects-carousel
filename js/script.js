@@ -54,11 +54,12 @@ let counterImg = 0;
 
 
 // 3. Sostituisco i miei elementi dello slider con gli oggetti importati
-arrayImgs.forEach((immagine)=>{
+arrayImgs.forEach((immagine) => {
 
   itemsCollector.innerHTML += `
  
   <div class="img-box item">
+
     <img src="${immagine.image}">
 
     <div class="text-box">
@@ -66,6 +67,7 @@ arrayImgs.forEach((immagine)=>{
 
       <p class="text">${immagine.text}</p>
     </div>
+
   </div>
 
   `;
@@ -94,7 +96,6 @@ arrayImgs.forEach((immagine)=>{
 
 
 // BONUS 1 // 1.
-let carouselNext = setInterval(clickNext, 2500);
 
 
 const images = document.getElementsByClassName('item');
@@ -105,17 +106,52 @@ btnNext.addEventListener('click', clickNext);
 
 btnPrev.addEventListener('click', clickPrev);
 
-// btnInvertCarousel.addEventListener('click', function(){
+let carouselSlideshowNext = setInterval(clickNext, 2500);
 
-//   if (carouselNext === setInterval(clickNext, 2500)) {
-//     console.log(this)
-//   } else {
-//     console.log('altro', this)
-//   }
+let goPrev = false;
 
-// });
+btnInvertCarousel.addEventListener('click', function(){
+
+  if (goPrev == true) {
+
+    clearInterval(carouselSlideshowNext);
+
+    carouselSlideshowNext = setInterval(clickNext, 2500);
+
+    goPrev = false;
+
+  } else if (goPrev == false) {
+
+    clearInterval(carouselSlideshowNext);
+
+    carouselSlideshowNext = setInterval(clickPrev, 2500);
+
+    goPrev = true;
+    
+  }
+
+});
 
 
+
+// if (funzioneA == clickNext) {
+//   goPrev = false;
+// } else  {
+//   goPrev = true;
+// };
+
+
+
+// console.log (carouselSlideshow);
+
+function funzioneA() {
+  if (carouselSlideshow == setInterval(clickNext, 2500)) {
+    return clickPrev
+  }
+
+  return clickNext
+  
+};
 
 
 function clickPrev() {
