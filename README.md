@@ -12,7 +12,6 @@ Carosello Array di Oggetti
 1. Creo un bottone "inverti direzione" nel DOM
 1. Dichiaro la classe in css ".slider-arrow.invert", e stilo il mio pulsante
 1. Dichiaro il bottone in una const in js
-1. (da editare) Al click del bottone fermo il setInterval e ne aggiungo un altro per l'altro "senso di marcia"/cambio la funzione da eseguire al setInterval
-
+1. Al click del bottone: se la direzione è normale (goPrev = false) allora vai all'indietro, e viceversa
 ## Bonus 3
 1. Aggiungo un eventListener alle thumbnail che mi renda attiva la thumb cliccata. (??)

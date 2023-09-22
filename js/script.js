@@ -94,10 +94,6 @@ arrayImgs.forEach((immagine) => {
 // };
 
 
-
-// BONUS 1 // 1.
-
-
 const images = document.getElementsByClassName('item');
 const imagesThumbActive = document.getElementsByClassName('item-thumb');
 
@@ -106,10 +102,12 @@ btnNext.addEventListener('click', clickNext);
 
 btnPrev.addEventListener('click', clickPrev);
 
+// BONUS 1 // 1.
 let carouselSlideshowNext = setInterval(clickNext, 2500);
 
 let goPrev = false;
 
+// BONUS 2 // 4. Al click del bottone: se la direzione è normale (goPrev = false) allora vai all'indietro, e viceversa
 btnInvertCarousel.addEventListener('click', function(){
 
   if (goPrev == true) {
@@ -127,7 +125,7 @@ btnInvertCarousel.addEventListener('click', function(){
     carouselSlideshowNext = setInterval(clickPrev, 2500);
 
     goPrev = true;
-    
+
   }
 
 });
